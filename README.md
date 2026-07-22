@@ -1,12 +1,12 @@
 # translation-memory-commons
 
-> Shared open translation-memory + glossary infrastructure reused across Elyos translation projects.  ·  **Risk tier:** med  ·  **Status:** planning
+> Shared open translation-memory + glossary infrastructure reused across Hee-Lee Oss translation projects.  ·  **Risk tier:** med  ·  **Status:** planning
 
-`translation-memory-commons` (TMC) is shared, **open** translation infrastructure for the Elyos language track: a license-clean, provenance-tracked **translation memory** (reusable source→target segment pairs) and **glossary/termbase** (terminology, do-not-translate items, definitions), built on open interchange standards (**TMX 1.4b** for memory, **TBX-Basic / ISO 30042** for terminology) and reused across every Elyos translation project — `vital-info-translations`, `public-domain-translations`, `health-info-translations`, `localization-for-good`, `irish-gaeilge-learning`, `emergency-phrasebooks`, and others.
+`translation-memory-commons` (TMC) is shared, **open** translation infrastructure for the Hee-Lee Oss language track: a license-clean, provenance-tracked **translation memory** (reusable source→target segment pairs) and **glossary/termbase** (terminology, do-not-translate items, definitions), built on open interchange standards (**TMX 1.4b** for memory, **TBX-Basic / ISO 30042** for terminology) and reused across every Hee-Lee Oss translation project — `vital-info-translations`, `public-domain-translations`, `health-info-translations`, `localization-for-good`, `irish-gaeilge-learning`, `emergency-phrasebooks`, and others.
 
 **Definition of shipped:** Reusable open TM/glossary adopted by multiple translation projects.
 
-This is an **Elyos** good-deed project. Contributors pull a task, do it with their own coding agent, and open a PR. Platform: https://github.com/jdev1977/elyos
+This is an **Hee-Lee Oss** good-deed project. Contributors pull a task, do it with their own coding agent, and open a PR. Platform: https://github.com/jdev1977/hee-lee-oss
 
 ## Plan
 - [PLAN.md](./PLAN.md) — robust enterprise plan (vision, architecture, roadmap, risks; includes an applied-improvements appendix + review sign-off)
@@ -15,8 +15,8 @@ This is an **Elyos** good-deed project. Contributors pull a task, do it with the
 
 ## Contribute
 ```bash
-elyos browse
-elyos next --repo Elyos-Projects/translation-memory-commons --no-fork
+hee-lee-oss browse
+hee-lee-oss next --repo Hee-Lee-Oss-Projects/translation-memory-commons --no-fork
 ```
 
 ## Licensing & review

@@ -1,6 +1,6 @@
 # Competitive + Improvement Analysis — `translation-memory-commons` (TMC)
 
-> Analyst review of PLAN.md v0.1.0 (2026-06-28) for the Elyos donated-lane good-deed project: an
+> Analyst review of PLAN.md v0.1.0 (2026-06-28) for the Hee-Lee Oss donated-lane good-deed project: an
 > open, license-clean, provenance-tracked TM (TMX 1.4b) + glossary/termbase (TBX-Basic) commons for
 > under-served languages, seeded from openly-licensed parallel material, serving translators and MT
 > training. Web-researched and cited throughout. Date: 2026-06-29.
@@ -50,14 +50,14 @@ guarantee (Sustainability section) to hold, provenance records themselves need t
 
 **1.3 Alignment quality — under-specified relative to its risk.** The plan treats alignment as
 "minimal sentence segmentation" and lists word-level statistical alignment as a non-goal. That is
-reasonable for *human-reviewed* Elyos outputs (already aligned by the translator). But the moment
+reasonable for *human-reviewed* Hee-Lee Oss outputs (already aligned by the translator). But the moment
 TMC seeds from any *external* parallel text (PD literary translations, government bitext), **segment
 alignment becomes the dominant quality risk** — literary and legal translations are notoriously
 non-sentence-aligned (1:many, reordered, omitted). The independent audit by Kreutzer/Caswell et al.
 ("Quality at a Glance," TACL 2022) manually audited 205 language corpora across CCAligned/ParaCrawl/
 WikiMatrix/OSCAR/mC4 and found **at least 15 corpora with no usable text and many low-resource
 corpora with <50% acceptable-quality sentences**, plus systematic mislabeling. The lesson for TMC:
-**for any non-Elyos parallel source, alignment correctness must be an explicit, reviewed gate** (not
+**for any non-Hee-Lee Oss parallel source, alignment correctness must be an explicit, reviewed gate** (not
 folded into "segmentation"), and low-resource pairs need a higher human-review sampling rate.
 
 **1.4 PII / content leakage in TM segments — correctly prioritized; detection bar is the open
@@ -199,7 +199,7 @@ axis OPUS structurally cannot serve because it is an aggregator of others' corpo
    "we have something they don't" wedge.
 6. **Standards-native, recallable, reproducible** — TMX/TBX with embedded attribution + a
    withdrawal path, versioned releases with changelogs. TMC is *infrastructure*, not a data dump.
-7. **Composability inside Elyos** — TMC compounds in value as sibling translation projects feed and
+7. **Composability inside Hee-Lee Oss** — TMC compounds in value as sibling translation projects feed and
    consume it; OPUS has no such network effect with the beneficiary projects.
 
 The honest caveat the plan already records: **none of this matters until a first consumer commits**
@@ -219,7 +219,7 @@ task) adds leverage:
 1. **Alignment QA / segment-pair triage.** Claude flags likely-misaligned pairs (1:many, semantic
    mismatch, length/script anomalies) for human review — directly attacking the #1 external-source
    risk (§1.3). It *proposes*; the reviewer *decides*.
-2. **Glossary/term extraction + candidate definitions.** From reviewed Elyos translations, Claude
+2. **Glossary/term extraction + candidate definitions.** From reviewed Hee-Lee Oss translations, Claude
    drafts candidate term entries (term, POS, do-not-translate flags, candidate translations) for the
    TBX wedge — high leverage on the lowest-risk surface.
 3. **License/PII triage assistant.** Claude pre-classifies source license signals and pre-flags
@@ -255,7 +255,7 @@ task) adds leverage:
    label never launders upstream copyright.
 2. **Support asymmetric source/target licensing** in `TmUnit.license` (or record the restrictive
    join + a note) — PD source + CC-BY-SA translation is common and currently unrepresentable (§1.2).
-3. **Make alignment a named gate for non-Elyos sources** with a higher human-review sampling rate on
+3. **Make alignment a named gate for non-Hee-Lee Oss sources** with a higher human-review sampling rate on
    low-resource pairs; cite the audit's <50%-quality finding as the rationale (§1.3).
 4. **Set a per-language PII detection floor + mandatory human spot-audit** for any language lacking a
    validated detector; "0 PII" is otherwise unfalsifiable for mission languages (§1.4).
@@ -270,7 +270,7 @@ task) adds leverage:
 9. **Hash-chain or append-only provenance records** so withdrawal-by-provenance and tier-up-only are
    tamper-evident, not just policy (§1.2).
 10. **Ship an MCP server (read-only query) as the consumer interface** — `match`, `glossary lookup`,
-    `license-filtered export` — so any agent-driven translation workflow (incl. sibling Elyos
+    `license-filtered export` — so any agent-driven translation workflow (incl. sibling Hee-Lee Oss
     projects) can consume TMC with provenance/tier/license attached to every hit, lowering the M2
     integration cost that currently gates "shipped."
 
@@ -301,8 +301,8 @@ task) adds leverage:
   provenance-attached query layer no competitor offers.
 - **`localization-for-good` shared TM** — software-UI-string register, complementing Mozilla/Pontoon
   but for non-profit/civic OSS in under-served locales.
-- **License-engine + allow-list as a reusable Elyos package** — the compatibility matrix, snapshot-
-  hash allow-list, and PII gate are useful to *every* Elyos content project, not just translation;
+- **License-engine + allow-list as a reusable Hee-Lee Oss package** — the compatibility matrix, snapshot-
+  hash allow-list, and PII gate are useful to *every* Hee-Lee Oss content project, not just translation;
   spin them out as shared `packages/` infrastructure.
 
 ---
@@ -310,7 +310,7 @@ task) adds leverage:
 ## 8. Open questions
 
 1. **External-subset stance (the pivotal one).** The plan says "never bulk; case-by-case only." But
-   the under-served-language scarcity problem (§1.7) means Elyos-internal seed material may be too
+   the under-served-language scarcity problem (§1.7) means Hee-Lee Oss-internal seed material may be too
    thin to hit useful match rates. Is there a disciplined path to admit *small, fully-verified,
    PII-screened, alignment-reviewed slices* of OPUS/DGT/FLORES+ for specific pairs — and what's the
    cost ceiling on that verification?

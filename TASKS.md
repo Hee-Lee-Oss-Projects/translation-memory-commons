@@ -5,9 +5,9 @@
 The backlog for the `translation-memory-commons` (TMC) good-deed project. Read alongside
 [PLAN.md](./PLAN.md). Milestones (M0–M3) match the roadmap there.
 
-## How these tasks map to Elyos
+## How these tasks map to Hee-Lee Oss
 
-Each task below becomes an **Elyos Task JSON** validated against
+Each task below becomes an **Hee-Lee Oss Task JSON** validated against
 `packages/schema/src/schemas.ts` (AJV / JSON Schema draft-07). Field mapping:
 
 - **id** — stable slug id, e.g. `translation-memory-commons-spec-001` (table column `ID`).
@@ -93,7 +93,7 @@ provenance/license/PII/tier intact. All tasks consumer-independent; `verifiedNee
 
 `glossary-001` (seed termbase)
 - ≥ 50 source→target term entries in one language pair, each with full provenance, license
-  (inherited from an allow-listed source / existing Elyos project glossary), domain, and quality
+  (inherited from an allow-listed source / existing Hee-Lee Oss project glossary), domain, and quality
   tier ≥ T1; reviewed by a qualified reviewer for the pair.
 - `safetyCritical` flagged where applicable (e.g., do-not-translate drug names, negation-bearing
   instruction terms).
@@ -118,7 +118,7 @@ extend the proven machinery from terms to **segment-level TM (TMX)**.
 |---|---|---|---|---|---|---|---|
 | translation-memory-commons-match-001 | Exact + fuzzy matcher + query API + match report (langpair/license/tier/domain filters) | code | medium | low | pr | ingest-001, export-001 | Maintainer |
 | translation-memory-commons-dedup-001 | Dedup + conflict-resolution rules (variants, tier/provenance ordering) | code | medium | medium | pr | match-001 | Maintainer / Qualified reviewer |
-| translation-memory-commons-tm-001 | Seed segment-level TM (≥200 TUs, tier ≥ T1) from a reviewed Elyos translation set | data | large | medium | dataset | ingest-001, license-001 | Qualified reviewer |
+| translation-memory-commons-tm-001 | Seed segment-level TM (≥200 TUs, tier ≥ T1) from a reviewed Hee-Lee Oss translation set | data | large | medium | dataset | ingest-001, license-001 | Qualified reviewer |
 | translation-memory-commons-license-002 | Automate license gate in CI (allow-list + per-unit + partition enforcement) | code | medium | medium | pr | license-001, schema-001 | License reviewer / Maintainer |
 | translation-memory-commons-pii-002 | Strengthen PII detection (multi-language) + human-review queue workflow | code | medium | medium | pr | pii-001 | Maintainer |
 | translation-memory-commons-watcher-001 | Automated source-change watcher (hash-diff vs. stored snapshots) | code | small | low | pr | license-001 | Maintainer |
@@ -160,7 +160,7 @@ License/PII "100%/0" metrics effective from here. **Steward named** (prerequisit
 
 ## Milestone M2 — First consumer integration (needs a committed consumer)
 
-Goal: a named Elyos translation project consumes TMC in a **real** translation and we measure the
+Goal: a named Hee-Lee Oss translation project consumes TMC in a **real** translation and we measure the
 leverage. First true Definition of Shipped. **All tasks gated on a committed consumer**
 (`verifiedNeed` flips to `true` only when confirmed).
 
@@ -173,7 +173,7 @@ leverage. First true Definition of Shipped. **All tasks gated on a committed con
 **Acceptance criteria — key M2 tasks**
 
 `consumer-001`
-- A named Elyos translation project (likely `vital-info-translations` or
+- A named Hee-Lee Oss translation project (likely `vital-info-translations` or
   `public-domain-translations`) **commits in writing** to integrate TMC, with an agreed language
   pair and a concrete **acceptance test** (target match rate + reviewer-acceptance threshold).
 - **Pause/decision point:** if no consumer commits by end of M1, the maintainer makes an explicit
@@ -259,7 +259,7 @@ metadata), not published translation content. Donated lane → no `fundedBudgetU
   "deliverable": "document",
   "tokenEstimate": "medium",
   "status": "open",
-  "context": "translation-memory-commons is shared open translation-memory + glossary infrastructure reused across Elyos translation projects. A translation memory aggregates segments from many sources, licenses, and quality levels, so an error, a mislicensed segment, or PII propagates into every downstream project that reuses it. Before any segment is stored, the project must lock its interchange standards and a data model in which provenance, license, PII status, and quality tier travel with every unit and can be filtered at query time.",
+  "context": "translation-memory-commons is shared open translation-memory + glossary infrastructure reused across Hee-Lee Oss translation projects. A translation memory aggregates segments from many sources, licenses, and quality levels, so an error, a mislicensed segment, or PII propagates into every downstream project that reuses it. Before any segment is stored, the project must lock its interchange standards and a data model in which provenance, license, PII status, and quality tier travel with every unit and can be filtered at query time.",
   "objective": "Select and document the interchange standards (TMX 1.4b for memory, TBX-Basic / ISO 30042 for terminology) and define the TmUnit and TermEntry data models with mandatory provenance, license, PII, quality-tier, language-pair, domain, safety-critical, and hash fields, plus the locked decisions (JSONL source-of-truth + disposable SQLite index; per-partition licensing; ND excluded / NC labeled; tier can only go up; no auto-apply to safety-critical).",
   "acceptanceCriteria": [
     "Spec selects TMX 1.4b and TBX-Basic (ISO 30042) and documents which standard fields carry provenance, license, and attribution",
@@ -269,9 +269,9 @@ metadata), not published translation content. Donated lane → no `fundedBudgetU
     "Spec is reviewed and merged; it is the basis for schema-001 (JSON Schemas) and license-001 (allow-list + compatibility matrix)"
   ],
   "resources": [
-    "C:/code/elyos/planning/projects/translation-memory-commons/PLAN.md",
-    "C:/code/elyos/packages/schema/src/schemas.ts",
-    "C:/code/elyos/planning/projects/vital-info-translations/PLAN.md",
+    "C:/code/hee-lee-oss/planning/projects/translation-memory-commons/PLAN.md",
+    "C:/code/hee-lee-oss/packages/schema/src/schemas.ts",
+    "C:/code/hee-lee-oss/planning/projects/vital-info-translations/PLAN.md",
     "TMX 1.4b specification (OASIS/GALA)",
     "TBX-Basic / ISO 30042 specification"
   ],

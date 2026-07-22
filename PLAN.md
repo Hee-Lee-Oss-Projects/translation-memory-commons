@@ -4,11 +4,11 @@
 
 ## Executive summary
 
-`translation-memory-commons` (TMC) is shared, **open** translation infrastructure for the Elyos
+`translation-memory-commons` (TMC) is shared, **open** translation infrastructure for the Hee-Lee Oss
 language track: a license-clean, provenance-tracked **translation memory** (reusable
 source→target segment pairs) and **glossary/termbase** (terminology, do-not-translate items,
 definitions), built on open interchange standards (**TMX 1.4b** for memory, **TBX-Basic /
-ISO 30042** for terminology) and reused across every Elyos translation project —
+ISO 30042** for terminology) and reused across every Hee-Lee Oss translation project —
 `vital-info-translations`, `public-domain-translations`, `health-info-translations`,
 `localization-for-good`, `irish-gaeilge-learning`, `emergency-phrasebooks`, and others.
 
@@ -30,7 +30,7 @@ filtered on at query time, and a segment's review tier can only ever go up, neve
 A TM is only as trustworthy as its worst segment's provenance, so no segment enters without one.
 
 **Lane.** Donated. A human runs their own coding agent interactively to build the tooling, ingest
-and curate segments, and open PRs; the Elyos CLI only prepares workspaces and opens PRs. No
+and curate segments, and open PRs; the Hee-Lee Oss CLI only prepares workspaces and opens PRs. No
 funded/API-key execution, no headless runs.
 
 **Risk tier: medium**, for two compounding reasons: (1) **amplification** — an error in a shared
@@ -42,7 +42,7 @@ content that did.
 
 **Honest status.** No downstream project has yet *formally committed* to consume TMC as a
 dependency, and no external partner exists. The *category* need is strongly evidenced (multiple
-live Elyos translation projects independently maintain overlapping glossaries today), but a named
+live Hee-Lee Oss translation projects independently maintain overlapping glossaries today), but a named
 **first consumer** with an agreed language pair and acceptance test is **TO BE SECURED**. Until one
 exists, `verifiedNeed` is recorded `false` on tasks whose value depends on real adoption, and the
 project's Definition of Shipped cannot be fully met. Securing the first consumer is the top
@@ -50,7 +50,7 @@ cold-start dependency (see Roadmap M2 and Open questions).
 
 ## Problem & beneficiaries
 
-**Who is helped (direct beneficiaries).** The **translators, reviewers, and maintainers of Elyos
+**Who is helped (direct beneficiaries).** The **translators, reviewers, and maintainers of Hee-Lee Oss
 translation projects** — the people doing the actual language work. Today each project starts cold:
 it builds its own glossary, re-translates segments other projects already translated, and re-makes
 terminology decisions in isolation. TMC gives them a shared, reviewed memory to draw from, cutting
@@ -65,13 +65,13 @@ correct attribution.
 
 **Who is helped (wider community).** If published as an open commons, the broader open-translation
 and language-revitalization community (e.g., Translators without Borders / CLEAR Global,
-under-served-language communities) can reuse the license-clean pools — a public good beyond Elyos.
+under-served-language communities) can reuse the license-clean pools — a public good beyond Hee-Lee Oss.
 
 **The need.** Translation memory and termbases are standard, decades-old professional tooling, but
 **open, license-clean, provenance-rich** TM/glossary commons are rare. Existing large bitext
 corpora (OPUS, ParaCrawl, etc.) are invaluable but are *web-scraped at scale with mixed,
 often-unverified licensing and known PII contamination* — unusable as-is for a project that must
-guarantee per-segment license cleanliness and privacy. Meanwhile, inside Elyos, several
+guarantee per-segment license cleanliness and privacy. Meanwhile, inside Hee-Lee Oss, several
 translation projects are duplicating glossary work and drifting apart on terminology. The gap is a
 **small, curated, fully-attributed, PII-clean, quality-tiered** commons that downstream projects
 can trust without re-verifying every segment.
@@ -94,7 +94,7 @@ communities, and OSS localization communities. None is committed as of this draf
 **Goals**
 
 - Provide a **shared TM + glossary commons** on open standards (TMX 1.4b, TBX-Basic) that any
-  Elyos translation project can consume and contribute to.
+  Hee-Lee Oss translation project can consume and contribute to.
 - Make **provenance, license, PII status, and quality tier first-class, per-segment** metadata that
   travels with every unit and is filterable at query time.
 - Guarantee **license cleanliness**: every published segment has verified, compatible license terms
@@ -102,7 +102,7 @@ communities, and OSS localization communities. None is committed as of this draf
   and consumers pick the pool that matches their use.
 - Guarantee **privacy**: no segment carrying personal data is published; PII detection is a hard
   ingest gate.
-- Improve **terminology consistency** across Elyos translation projects (the same term rendered the
+- Improve **terminology consistency** across Hee-Lee Oss translation projects (the same term rendered the
   same way everywhere), measurably.
 - Provide **fuzzy + exact matching** so translators get high-quality suggestions, while ensuring
   **safety-critical content is never auto-applied** from a match without in-context human review.
@@ -141,7 +141,7 @@ reused by a translation project to help real readers**.
 
 | Metric | Baseline | Target | How measured |
 |---|---|---|---|
-| Elyos translation projects **actively consuming** TMC (real translation run through it) | 0 | ≥ 2 by end of M3 | Consumer confirmation in PR/receipt; project registry |
+| Hee-Lee Oss translation projects **actively consuming** TMC (real translation run through it) | 0 | ≥ 2 by end of M3 | Consumer confirmation in PR/receipt; project registry |
 | **Reuse / match rate** — share of a new translation's segments served by a fuzzy (≥ 75%) or exact match from the commons | 0 | ≥ 25% on the first integrated document set (**effective from M2**) | Match-report emitted by the matcher per run |
 | **Reviewer-accepted reuse** — share of offered matches a qualified reviewer accepts (after in-context review) | n/a | ≥ 70% of *non-safety-critical* offers; safety-critical always re-reviewed | Reviewer logs |
 | **Terminology consistency** — agreement on shared terms across ≥ 2 consuming projects | n/a | ≥ 95% of shared glossary terms rendered identically | Cross-project glossary diff report |
@@ -183,7 +183,7 @@ counts until the denominator reaches **≥ 50** offered matches / shared terms; 
   quality tier, and domain; emits a per-run **match report**.
 - **Quality tiers** (T0 raw/MT · T1 human-reviewed · T2 expert-signed) with a promotion process and
   the **"tier can only go up"** and **"no auto-apply to safety-critical"** rules.
-- **Seeding** the commons from existing Elyos translation outputs (glossary first, then TM).
+- **Seeding** the commons from existing Hee-Lee Oss translation outputs (glossary first, then TM).
 - File-based, **git-friendly** store; optional local SQLite index for matching speed.
 
 **Out of scope** (explicit)
@@ -199,7 +199,7 @@ counts until the denominator reaches **≥ 50** offered matches / shared terms; 
 
 ## Solution approach & architecture
 
-TMC is a **software + curated-data** project on the Elyos donated lane (CLI prepares workspace,
+TMC is a **software + curated-data** project on the Hee-Lee Oss donated lane (CLI prepares workspace,
 human runs agent, PR opened, human/expert review gates "done"). It is deliberately **file-based and
 library-shaped** so it stays reproducible, diffable in git, and free of hosting/secrets.
 
@@ -287,7 +287,7 @@ version/date, retrieval date, license name + URL, **snapshot of license text**, 
 allowed flag, commercial-allowed flag, share-alike flag, required attribution, **SHA-256
 snapshotHash** + web-archive URL, `verifiedBy`/`verifiedDate`). Eligible source classes:
 
-- **Outputs of other Elyos translation projects** — already carry source-compatible licenses +
+- **Outputs of other Hee-Lee Oss translation projects** — already carry source-compatible licenses +
   attribution + reviewer sign-off; the cleanest seed source. We **inherit** their license and
   review provenance unchanged.
 - **Public-domain bitext / parallel texts** (e.g., PD literary translations, government PD where
@@ -303,7 +303,7 @@ snapshotHash** + web-archive URL, `verifiedBy`/`verifiedDate`). Eligible source 
 - **Most-restrictive-wins within a partition** when combining units of compatible-but-not-identical
   terms (e.g., CC-BY + CC-BY-SA → SA constraints apply to that combined pool).
 - **ND excluded.** A translation/TM reuse is a derivative; NoDerivatives content cannot enter.
-- **NC labeled, not hidden.** NonCommercial units are usable by Elyos (non-profit) but the published
+- **NC labeled, not hidden.** NonCommercial units are usable by Hee-Lee Oss (non-profit) but the published
   pool is clearly marked NC so commercial reusers are not misled (avoids the WHO-style NC trap).
 - **Share-alike honored.** SA pools state the share-alike obligation explicitly in the export.
 - **Attribution is mandatory** and embedded per unit in the TMX/TBX export; absence fails the gate.
@@ -387,7 +387,7 @@ and **no propagated critical defect**. Built-but-unused is **not** shipped.
 
 **M0 — Foundation & cold-start (glossary wedge; no consumer required).**
 Goal: lock the standards + data model, stand up the license/PII/quality machinery, and prove it
-end-to-end on the **glossary/termbase** seeded from one existing Elyos project — ingest → store →
+end-to-end on the **glossary/termbase** seeded from one existing Hee-Lee Oss project — ingest → store →
 match → standards-compliant export with provenance/license/PII/tier intact.
 Exit criteria: interchange standards + data model spec merged (`spec-001`); JSON Schemas +
 validators in `packages/schema`, CI fails on malformed units (`schema-001`); allow-list with ≥ 3
@@ -404,14 +404,14 @@ Goal: add fuzzy/exact matching, dedup + conflict resolution, automate the licens
 extend the proven machinery from terms to **segment-level TM (TMX)**.
 Exit criteria: matcher with langpair/license/tier/domain filters + match report (`match-001`); dedup
 + conflict-resolution rules implemented (`dedup-001`); ≥ 200 TUs at tier ≥ T1 seeded from a reviewed
-Elyos translation set, full provenance, TMX round-trip green (`tm-001`); **automated license gate in
+Hee-Lee Oss translation set, full provenance, TMX round-trip green (`tm-001`); **automated license gate in
 CI** (`license-002`); **strengthened, multi-language PII detection + human-review queue**
 (`pii-002`); automated source-change watcher (`watcher-001`); reviewer/promotion process documented
 (`review-001`); contributor + consumer runbook merged (`runbook-001`). License/PII "100%/0" metrics
 **effective from here**. Dependency: reviewer sourcing.
 
 **M2 — First consumer integration (needs a committed consumer).**
-Goal: a named Elyos translation project consumes TMC in a **real** translation and we measure the
+Goal: a named Hee-Lee Oss translation project consumes TMC in a **real** translation and we measure the
 leverage. This is the first true Definition of Shipped event.
 Exit criteria: a consumer project committed in writing, agreed language pair + acceptance test
 (`consumer-001`, flips `verifiedNeed: true`); TMC integrated into that project's workflow, a real
@@ -431,7 +431,7 @@ scoped (`federation-001`, backlog).
 ## Work breakdown
 
 The itemized, sized backlog lives in **[TASKS.md](./TASKS.md)**, organized by the milestones above
-(M0–M3) plus a Backlog/future section. Each task maps to an Elyos Task JSON
+(M0–M3) plus a Backlog/future section. Each task maps to a Hee-Lee Oss Task JSON
 (`packages/schema/src/schemas.ts`) with id, type, lane, risk tier, deliverable, acceptance
 criteria, and license fields. M0/M1 tasks are consumer-independent foundations; M2+ tasks are gated
 on a committed consumer and marked `verifiedNeed: false` until then.
@@ -452,16 +452,16 @@ on a committed consumer and marked `verifiedNeed: false` until then.
 - **Steward (last-mile owner): TBD — named by end of M1** (acting maintainer holds the role
   interim). Owns the **consumer relationship** and confirms real adoption/integration — without this,
   nothing reaches "shipped." Naming a steward is a **prerequisite for entering M2**.
-- **Consumer / requestor: TO BE SECURED** — the first downstream Elyos translation project (or
+- **Consumer / requestor: TO BE SECURED** — the first downstream Hee-Lee Oss translation project (or
   external adopter) that integrates TMC and confirms real reuse.
 
 ## Dependencies & integrations
 
-- **Elyos donated lane**: `packages/cli` (workspace prep + PR), `packages/core`, `packages/schema`
+- **Hee-Lee Oss donated lane**: `packages/cli` (workspace prep + PR), `packages/core`, `packages/schema`
   (Task JSON + the new content schemas). No funded-lane / API-key execution.
 - **`vital-info-translations`** — shares the allow-list pattern and is a candidate first seed source
   and first consumer; coordination needed to avoid duplicate glossary work.
-- **Other Elyos translation projects** (`public-domain-translations`, `health-info-translations`,
+- **Other Hee-Lee Oss translation projects** (`public-domain-translations`, `health-info-translations`,
   `localization-for-good`, `irish-gaeilge-learning`, `emergency-phrasebooks`) — future
   consumers/contributors.
 - **Open standards**: TMX 1.4b (OASIS/GALA), TBX-Basic / ISO 30042, optionally XLIFF 2.1 for
@@ -522,7 +522,7 @@ on a committed consumer and marked `verifiedNeed: false` until then.
 
 ## Open questions
 
-1. **First consumer.** Which Elyos project commits first (likely `vital-info-translations` or
+1. **First consumer.** Which Hee-Lee Oss project commits first (likely `vital-info-translations` or
    `public-domain-translations`), for which language pair, with what acceptance test? Blocks M2 and
    `verifiedNeed=true`. **Consumer-sourcing plan (concrete):** acting maintainer approaches the
    `vital-info-translations` maintainer first (shared allow-list pattern makes integration cheap),
@@ -551,12 +551,12 @@ on a committed consumer and marked `verifiedNeed: false` until then.
 
 ## References
 
-- `C:\code\elyos\CLAUDE.md` — Elyos work rules, lanes, quality bar, refusal guardrails.
-- `C:\code\elyos\docs\good-deed-definition.md` — good-deed criteria and risk tiers.
-- `C:\code\elyos\packages\schema\src\schemas.ts` — Task JSON schema (content schemas added here).
-- `C:\code\elyos\planning\projects\vital-info-translations\PLAN.md` / `TASKS.md` — sibling
+- `C:\code\hee-lee-oss\CLAUDE.md` — Hee-Lee Oss work rules, lanes, quality bar, refusal guardrails.
+- `C:\code\hee-lee-oss\docs\good-deed-definition.md` — good-deed criteria and risk tiers.
+- `C:\code\hee-lee-oss\packages\schema\src\schemas.ts` — Task JSON schema (content schemas added here).
+- `C:\code\hee-lee-oss\planning\projects\vital-info-translations\PLAN.md` / `TASKS.md` — sibling
   translation project; allow-list, glossary, reviewer, and license-gate patterns reused here.
-- `C:\code\elyos\planning\ROADMAP.md` — portfolio; TMC and its consumer projects (Track 4).
+- `C:\code\hee-lee-oss\planning\ROADMAP.md` — portfolio; TMC and its consumer projects (Track 4).
 - TMX 1.4b specification (OASIS/GALA) — translation-memory interchange.
 - TBX / ISO 30042 (TBX-Basic) — termbase interchange.
 - XLIFF 2.1 (OASIS) — optional downstream handoff format.
@@ -637,7 +637,7 @@ the text above (this is not a wishlist — each is reflected in the sections not
 
 ## Review sign-off
 
-**Reviewer:** acting maintainer (self-review against the Elyos planning spec, CLAUDE.md, and the
+**Reviewer:** acting maintainer (self-review against the Hee-Lee Oss planning spec, CLAUDE.md, and the
 good-deed definition). **Date:** 2026-06-28. **Verdict:** ready for community/board review as a
 Draft (v0.1.0).
 

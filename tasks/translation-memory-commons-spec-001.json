@@ -11,7 +11,7 @@
   "deliverable": "document",
   "tokenEstimate": "medium",
   "status": "open",
-  "context": "translation-memory-commons is shared open translation-memory + glossary infrastructure reused across Elyos translation projects. A translation memory aggregates segments from many sources, licenses, and quality levels, so an error, a mislicensed segment, or PII propagates into every downstream project that reuses it. Before any segment is stored, the project must lock its interchange standards and a data model in which provenance, license, PII status, and quality tier travel with every unit and can be filtered at query time.",
+  "context": "translation-memory-commons is shared open translation-memory + glossary infrastructure reused across Hee-Lee Oss translation projects. A translation memory aggregates segments from many sources, licenses, and quality levels, so an error, a mislicensed segment, or PII propagates into every downstream project that reuses it. Before any segment is stored, the project must lock its interchange standards and a data model in which provenance, license, PII status, and quality tier travel with every unit and can be filtered at query time.",
   "objective": "Select and document the interchange standards (TMX 1.4b for memory, TBX-Basic / ISO 30042 for terminology) and define the TmUnit and TermEntry data models with mandatory provenance, license, PII, quality-tier, language-pair, domain, safety-critical, and hash fields, plus the locked decisions (JSONL source-of-truth + disposable SQLite index; per-partition licensing; ND excluded / NC labeled; tier can only go up; no auto-apply to safety-critical).",
   "acceptanceCriteria": [
     "Spec selects TMX 1.4b and TBX-Basic (ISO 30042) and documents which standard fields carry provenance, license, and attribution",
@@ -21,9 +21,9 @@
     "Spec is reviewed and merged; it is the basis for schema-001 (JSON Schemas) and license-001 (allow-list + compatibility matrix)"
   ],
   "resources": [
-    "C:/code/elyos/planning/projects/translation-memory-commons/PLAN.md",
-    "C:/code/elyos/packages/schema/src/schemas.ts",
-    "C:/code/elyos/planning/projects/vital-info-translations/PLAN.md",
+    "C:/code/hee-lee-oss/planning/projects/translation-memory-commons/PLAN.md",
+    "C:/code/hee-lee-oss/packages/schema/src/schemas.ts",
+    "C:/code/hee-lee-oss/planning/projects/vital-info-translations/PLAN.md",
     "TMX 1.4b specification (OASIS/GALA)",
     "TBX-Basic / ISO 30042 specification"
   ],
